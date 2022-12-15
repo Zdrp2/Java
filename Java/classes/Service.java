@@ -1,6 +1,8 @@
 package classes;
 import java.util.Scanner;
 
+import javax.lang.model.util.ElementScanner14;
+
 public class Service {
     private int ID;
     private String NAME;
@@ -25,5 +27,16 @@ public class Service {
         System.out.println("ID услуги: " + ID);
         System.out.println("Название услуги: " + NAME);
 		System.out.println("Цена: " + price);
+    }
+    public void sravn_price(Service sr) {
+        if (this.price > sr.price) {
+            System.out.println(this.NAME + " дороже");
+        }
+        else if (this.price < sr.price) {
+            System.out.println(this.NAME + " дешевле");
+        }
+        else {
+            System.out.println("Цены услуг равны");
+        }
     }
 }

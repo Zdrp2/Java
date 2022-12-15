@@ -2,7 +2,7 @@ import classes.*;
 
 public class main {
     public static void main(String args[]) {
-        System.out.println();
+        /*System.out.println();
         int id_client = 123;
         String cient_name = "Иванов Иван Иванович";
         Client Client1 = new Client();
@@ -24,6 +24,12 @@ public class main {
         Massage1.Output();
         System.out.println("\n" + "Массажист2:");
         Massage2.Output();
+        System.out.println("\n");
+        System.out.println("Проверка статического поля: " + Massage.count_massage);
+        System.out.println("Количество массажистов: " + Massage.get_count_massage());
+        System.out.println("\n");
+
+        System.out.println("Проверка вспомогательного класса (количество свободных массажистов): " + helper_class.count_sv_massage());
         System.out.println("\n");
 		
 		int id_place = 1212;
@@ -48,14 +54,36 @@ public class main {
         Service1.Output();
         System.out.println("\n" + "Услуга2:");
         Service2.Output();
+
+        System.out.println("\n");
+        Service2.sravn_price(Service1);
         System.out.println("\n");
 		
-		Table Table1 = new Table();
-        Table Table2 = new Table(Client1, Massage1, Service1, Place1);
-        Table1.Input();
-        System.out.println("\n" + "Таблица1:");
-        Table1.Output();
-        System.out.println("\n" + "Таблица2:");
-        Table2.Output();
+		Table[] table = new Table[3];
+        for (int i = 0; i < 2; i++) {
+            table[i] = new Table();
+            table[i].Input();
+        }
+        table[2] = new Table(Client2, Massage2, Service2, Place2);
+        for (int i = 0; i < 3; i++) {
+            System.out.println("\n" + "Таблица " + (i+1) + ":");
+            table[i].Output();
+        }*/
+        Table[][] Table = new Table[1][1];
+        for (int i=0; i < 1; i++){      //////////////////Ввод двумерного массива
+            for (int j=0; j<1;j++){
+                System.out.println();
+			    Table[i][j] = new Table();
+                Table[i][j].Input();
+            }
+            System.out.println();
+		}
+        for (int i=0; i < 1; i++){      //////////////////Вывод двумерного массива
+            for (int j=0; j<1;j++){
+                System.out.println();
+                Table[i][j].Output();
+            }
+            System.out.println();
+		}
     }
 }
