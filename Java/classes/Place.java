@@ -6,6 +6,9 @@ public class Place {
     private String Street;
 	private int house;
     public Place() {
+        ID = 0;
+        Street = "Нет улицы";
+		house = 0;
     }
     public Place(int id, String str, int hs) {
         ID = id;

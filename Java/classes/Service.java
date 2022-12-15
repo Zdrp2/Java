@@ -8,6 +8,9 @@ public class Service {
     private String NAME;
 	private int price;
     public Service() {
+        ID = 0;
+        NAME = "Нет названия";
+		price = 0;
     }
     public Service(int id, String name, int pr) {
         ID = id;
