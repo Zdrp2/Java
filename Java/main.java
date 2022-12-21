@@ -1,3 +1,8 @@
+import java.util.ArrayList;
+import java.util.ListIterator;
+import java.util.SortedSet;
+import java.util.TreeSet;
+
 import classes.*;
 
 public class main {
@@ -68,7 +73,7 @@ public class main {
         for (int i = 0; i < 3; i++) {
             System.out.println("\n" + "Таблица " + (i+1) + ":");
             table[i].Output();
-        }*/
+        }
         Table[][] Table = new Table[1][1];
         for (int i=0; i < 1; i++){      //////////////////Ввод двумерного массива
             for (int j=0; j<1;j++){
@@ -85,5 +90,41 @@ public class main {
             }
             System.out.println();
 		}
+        Massage_zp zp1 = new Massage_zp();
+        Massage_zp zp2 = new Massage_zp(123, "Иван Иванович", 12, 15000, 4000);
+        zp2.Output();
+        zp1.Output();
+        System.out.println("Заработная плата: " + zp1.get_zp() + "\nПремия: " + zp1.get_aw() + "\nИтог: " + zp1.get_itog());
+        System.out.println("Заработная плата: " + zp2.get_zp() + "\nПремия: " + zp2.get_aw() + "\nИтог: " + zp2.get_itog());
+
+        System.out.println("\nВывод через ToString():\n" + zp1);
+        System.out.println(zp2);
+
+        Massage ms1 = new Massage(12, "Иван Иванович", 16);
+        Massage ms2 = new Massage(22, "Илья Романович", 30);
+        System.out.println("Перегруз метода производный: " + ms1.EXP_calc(ms2));
+        System.out.println("Перегруз метода базовый: " + ms1.EXP_calc(ms1, ms2));
+
+        Place pl1 = new Place();
+        pl1.add_adrs()*/
+        Massage ms1 = new Massage(12, "Иван Иванович", 16);
+        Massage_zp ms2 = new Massage_zp(22, "Артем", 30, 25000, 5000);
+        SortedSet<String> massage_cont = new TreeSet<>();
+        massage_cont.add(ms1.retfio());
+        massage_cont.add(ms2.retfio());
+        System.out.println(massage_cont.toString());
+
+        ArrayList<String> massage_cont1 = new ArrayList<String>();
+        massage_cont1.add(ms1.retfio());
+        massage_cont1.add(ms2.retfio());
+        ListIterator<String> listIter = massage_cont1.listIterator();
+        String m;
+        while(listIter.hasNext()){
+            m = listIter.next();
+            System.out.println(m);
+            if (m == "Артем") {
+                System.out.println("Поиск работает");
+            }
+        }
     }
 }

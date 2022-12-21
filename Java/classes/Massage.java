@@ -3,9 +3,14 @@ import java.util.Scanner;
 
 public class Massage {
     public static int count_massage = 0;
-    private int ID;
-    private String FIO;
-	private int EXP;
+    protected int ID;
+    protected String FIO;
+	protected int EXP;
+    public Massage(Massage ms) {  // передача объекта конструктору
+		ID = ms.ID;
+		FIO = ms.FIO;
+		EXP = ms.EXP;
+	}
     public Massage() {
         ID = 0;
         FIO = "Нет имени";
@@ -45,5 +50,14 @@ public class Massage {
         System.out.println("ID массажиста: " + ID);
         System.out.println("ФИО массажиста: " + FIO.toUpperCase());
 		System.out.println("Стаж: " + EXP);
+    }
+    public float EXP_calc(Massage ms1, Massage ms2){
+        return ms1.EXP + ms2.EXP;
+    }
+	public double EXP_calc(Massage ms1){
+        return this.EXP + ms1.EXP;
+    }
+    public String retfio(){
+        return FIO;
     }
 }

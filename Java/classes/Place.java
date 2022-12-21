@@ -1,7 +1,7 @@
 package classes;
 import java.util.Scanner;
 
-public class Place {
+public class Place implements salon{
     private int ID;
     private String Street;
 	private int house;
@@ -29,4 +29,18 @@ public class Place {
         System.out.println("Улица: " + Street);
 		System.out.println("Дом: " + house);
     }
+    @Override
+	public void add_adrs() {
+		System.out.println("\nДобавить адрес");
+	}
+
+	@Override
+	public void delete_adrs() {
+		System.out.println("\nудалить адрес");
+	}
+
+	@Override
+	public void choose_adrs() {
+		System.out.println("\nВыбрать адрес");
+	}
 }
